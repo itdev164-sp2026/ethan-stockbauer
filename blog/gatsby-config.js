@@ -16,10 +16,17 @@ module.exports = {
     contact: {
       name: `Ethan`,
       company: `Ethan's Company`,
-      address: `123 Bremen St, Miilwaukee, WI`
+      address: `123 Bremen St, Milwaukee, WI`
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `3pq5i85bmz88`,
+        accessToken: `WQTr3T-qTmvFmoC28uqTOa5QtwnjlVPG4TUcExsVfEM`,
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

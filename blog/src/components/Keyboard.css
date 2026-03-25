@@ -1,13 +1,3 @@
-/* ============================================================
-   Keyboard.css
-   Piano-style keyboard layout.
-
-   Each .keyboard__octave is a relative-positioned row.
-   White keys are flex children.
-   Black keys are absolutely positioned on top.
-   ============================================================ */
-
-/* ---- outer container ---- */
 .keyboard {
   display: flex;
   flex-direction: row;
@@ -17,18 +7,14 @@
   user-select: none;
 }
 
-/* ---- one octave ---- */
 .keyboard__octave {
-  position: relative;   /* anchors the absolute black keys */
+  position: relative;
   display: flex;
   flex-direction: row;
 }
 
-/* ============================================================
-   White keys
-   ============================================================ */
 .keyboard__key--white {
-  position: relative;   /* z-index stacking context */
+  position: relative;
   z-index: 1;
 
   width: 48px;
@@ -55,7 +41,6 @@
   background: #b8d4f8;
 }
 
-/* ---- note label on white keys ---- */
 .keyboard__key-label {
   font-size: 11px;
   font-weight: 600;
@@ -63,18 +48,12 @@
   pointer-events: none;
 }
 
-/* ============================================================
-   Black keys
-   ============================================================ */
 .keyboard__key--black {
   position: absolute;
-  z-index: 2;           /* sits on top of white keys */
+  z-index: 2;
   top: 0;
 
-  /* width / height are set as percentages of the octave width.
-     We override width inline via the calculated left% in the component.
-     Here we set height and a sensible default width. */
-  width: calc(100% / 7 * 0.6);   /* ~60% of one white key width */
+  width: calc(100% / 7 * 0.6);
   height: 100px;
 
   background: #222;
@@ -93,9 +72,6 @@
   background: #666;
 }
 
-/* ============================================================
-   Empty state
-   ============================================================ */
 .keyboard__empty {
   color: #888;
   font-style: italic;
